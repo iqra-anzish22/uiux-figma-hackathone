@@ -6,7 +6,7 @@ const Product = () => {
   return (
     <div>
       {/* Section Heading */}
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font bg-white">
         <div className="container px-5 py-24 mx-auto">
           {/* Centered Heading */}
           <h1 className="text-[40px] font-bold text-gray-800 text-center mb-12">
