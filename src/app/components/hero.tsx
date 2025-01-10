@@ -1,10 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 
+
 const Hero = () => {
   return (
 
-  <div className="relative w-[1440] h-[716.83px]">
+  <div className="relative w-[1499px] h-[716.83px]">
   <Image
     className="object-cover"
     src="/images/hero.jpg"
@@ -12,6 +13,7 @@ const Hero = () => {
     layout="fill" 
     quality={100}
   />
+  
 </div>
 
   )
