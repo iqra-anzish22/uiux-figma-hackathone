@@ -1,9 +1,9 @@
-import React from "react";
+ "use client" 
+  
+  import React, { useState } from "react";
 import Image from "next/image";
 import { FaShareAlt, FaExchangeAlt, FaHeart } from "react-icons/fa";
 
-
-// Product data array
 const products = [
   {
     id: 1,
@@ -79,7 +79,23 @@ const products = [
   },
 ];
 
+type Product = {
+  id: number;
+  image: string;
+  name: string;
+  description: string;
+  price: string;
+  originalPrice?: string;
+  discount?: string;
+};
+
 const Product = () => {
+  const [cart, setCart] = useState<Product[]>([]);
+
+  const addToCart = (product: Product) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
+
   return (
     <div>
       {/* Section Heading */}
@@ -131,7 +147,10 @@ const Product = () => {
                   {/* Hover Effect - Buttons */}
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out cursor-pointer">
                     <div className="space-x-4 text-white">
-                      <button className="px-2 text-[#B88E2F] py-2 bg-[#FFFFFF] rounded-lg">
+                      <button
+                        className="px-2 text-[#B88E2F] py-2 bg-[#FFFFFF] rounded-lg"
+                        onClick={() => addToCart(product)}
+                      >
                         Add to Cart
                       </button>
                       <div className="flex space-x-2 mt-4">

@@ -1,9 +1,9 @@
-/** @type {import('next').NextConfig} */
+// next.config.mjs
 const nextConfig = {
-    eslint: {
-        ignoreDuringBuilds: true,
-      },
-      
+  reactStrictMode: true,
+  images: {
+    domains: ["cdn.sanity.io"], // Allow images from Sanity's CDN
+  },
 };
 
 export default nextConfig;
